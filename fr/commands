@@ -1,1 +1,2 @@
-*CAMERA*==(jv_plugin_affichage_ouvrir_url "http://192.168.1.29:8081")
+*GOOLGE*==$(jv_plugin_affichage_ouvrir_url "http://google.fr")
+*AFFICHE*MESSAGE*==$(jv_plugin_affichage_message "bonjour")

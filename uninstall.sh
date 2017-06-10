@@ -1,0 +1,1 @@
+rm "/var/www/html/jarvis-chromium-message.php"
