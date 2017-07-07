@@ -1,4 +1,4 @@
-*GOOGlE*==say "Sur quel site souhaitez-vous aller?
+*GOOGlE*==say "Sur quel site souhaitez-vous aller?"
 > (*)==recherche="(1)" && $(jv_plugin_affichage_ouvrir_url "http://$recherche.fr")
 >>*FIN*RECHERCHE*|*FIN*GOOGLE*|*FERME*GOOGLE*==say "Fin google." && $(jv_plugin_affichage_fermer_naviguateur)
 
