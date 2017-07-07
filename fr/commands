@@ -1,3 +1,3 @@
 *GOOGlE*==$(jv_plugin_affichage_ouvrir_url "http://google.fr")
-*RECHERCHE*MULTIPLE* (*)==recherche="(1)" && $(jv_plugin_affichage_ouvrir_url "https://www.google.fr/search?q=$recherche&hl=fr&site=webhp&source=lnms&tbm=isch&sa=X&ved=0ahUKEwi877KlsffUAhXHUhQKHdxVAZ8Q_AUIBigB&biw=1536&bih=759")
+*RECHERCHE*MULTIPLE* (*)==recherche="(1)" && $(jv_plugin_affichage_ouvrir_url "https://www.google.fr/search?q=$recherche&hl=fr&site=webhp&source=lnms&tbm=isch&sa=X&ved=0ahUKEwi877KlsffUAhXHUhQKHdxVAZ8Q_AUIBigB&biw=1536&bih=759") && say "Recherche de $recherche sur Chromium."
 *AFFICHE*MESSAGE*==$(jv_plugin_affichage_message "bonjour")
