@@ -1,4 +1,16 @@
-*GOOGlE*==$(jv_plugin_affichage_ouvrir_url "http://google.fr")
-*RECHERCHE*MULTIPLE* (*)==recherche="(1)" && say "Recherche multiple sur $recherche lancée..." && $(jv_plugin_affichage_ouvrir_url "http://dictionnaire.reverso.net/francais-definition/$recherche") && $(jv_plugin_affichage_ouvrir_url "https://www.google.fr/search?q=$recherche&hl=fr&site=webhp&source=lnms&tbm=isch&sa=X&ved=0ahUKEwi877KlsffUAhXHUhQKHdxVAZ8Q_AUIBigB&biw=1536&bih=759") 
+*GOOGlE*==say "Sur quel site souhaitez-vous aller?
+> (*)==recherche="(1)" && $(jv_plugin_affichage_ouvrir_url "http://$recherche.fr")
+>>*FIN*RECHERCHE*|*FIN*GOOGLE*|*FERME*GOOGLE*==say "Fin google." && $(jv_plugin_affichage_fermer_naviguateur)
+
 *AFFICHE*MESSAGE*==$(jv_plugin_affichage_message "bonjour")
 *FERME*GOOGLE*==$(jv_plugin_affichage_fermer_naviguateur)
+
+
+*RECHERCHE*MULTIPLE* (*)==recherche="(1)" && say "Recherche multiple sur $recherche lancée..." && say "$(jv_pg_wk_search "$recherche")" && $(jv_plugin_affichage_ouvrir_url "http://$recherche.fr")|say "Impossible de trouver un site du nom de $recherche"; return 
+>*RECHERCHE*SITE*==$(jv_plugin_affichage_fermer_naviguateur) && $(jv_plugin_affichage_ouvrir_url "http://$recherche.fr"); return
+>*ACTUALITE*==$(jv_plugin_affichage_fermer_naviguateur) && $(jv_plugin_affichage_ouvrir_url "http://https://www.google.fr/search?q=$recherche&rlz=1C1CHBD_frFR703FR703&tbm=nws&source=lnms&sa=X&ved=0ahUKEwiBx6-X9_fUAhUCbBoKHWAzC3EQ_AUICigB&biw=1536&bih=759&dpr=1.25"); return
+>*SHOPPING*==$(jv_plugin_affichage_fermer_naviguateur) && $(jv_plugin_affichage_ouvrir_url "http://https://www.google.fr/search?q=$recherche&rlz=1C1CHBD_frFR703FR703&tbm=nws&source=lnms&sa=X&ved=0ahUKEwiBx6-X9_fUAhUCbBoKHWAzC3EQ_AUICigB&biw=1536&bih=759&dpr=1.25#q=$recherche&tbm=shop"); return
+>*VIDEO*==$(jv_plugin_affichage_fermer_naviguateur) && $(jv_plugin_affichage_ouvrir_url "https://www.google.fr/search?q=$recherche&rlz=1C1CHBD_frFR703FR703&tbm=vid&source=lnms&sa=X&ved=0ahUKEwiOx86u9ffUAhXGAMAKHXt9DL0Q_AUIDCgD&biw=1536&bih=759&dpr=1.25"); return
+>*IMAGE*==$(jv_plugin_affichage_fermer_naviguateur) && (jv_plugin_affichage_ouvrir_url "https://www.google.fr/search?q=$recherche&hl=fr&site=webhp&source=lnms&tbm=isch&sa=X&ved=0ahUKEwi877KlsffUAhXHUhQKHdxVAZ8Q_AUIBigB&biw=1536&bih=759"); return
+>*MERCI*|*CEST*BON*==say "Toujours à votre service Monsieur."; return
+>*FIN*RECHERCHE*MULTIPLE*==say "Fin des recherches..." && $(jv_plugin_affichage_fermer_naviguateur)
