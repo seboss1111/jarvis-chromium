@@ -14,11 +14,11 @@ else
 <html>
   <head>
     <title>jarvis-message</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=0.5, initial-scale=0.5">
     <style>
     	body{
-            height: 100%;
-            width: 100%;
+            height: 50%;
+            width: 50%;
             padding-top: 15%;
             display: flex;
             flex-direction: column;
