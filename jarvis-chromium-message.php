@@ -19,7 +19,7 @@ else
     	body{
             height: 50%;
             width: 50%;
-            padding-top: 100%;
+            padding-top: 50%;
             display: flex;
             flex-direction: column;
             justify-content: center;
